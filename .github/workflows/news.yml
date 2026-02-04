@@ -2,7 +2,7 @@ name: News Watcher
 
 on:
   schedule:
-    - cron: "*/30 * * * *" # mỗi 30 phút
+    - cron: "0 9 * * *" # 9 giờ sáng mỗi ngày
   workflow_dispatch:
 
 jobs:
