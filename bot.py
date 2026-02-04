@@ -7,8 +7,20 @@ load_dotenv()
 
 URL = "https://hcmus.edu.vn/tag/tot-nghiep/"
 
-BOT_TOKEN = os.environ["BOT_TOKEN"]
-CHAT_ID = os.environ["CHAT_ID"]
+
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+CHAT_ID = os.environ.get("CHAT_ID")
+
+if BOT_TOKEN:
+    print(f"✅ BOT_TOKEN loaded (length: {len(BOT_TOKEN)})")
+else:
+    print("❌ BOT_TOKEN is missing!")
+
+if CHAT_ID:
+    print(f"✅ CHAT_ID loaded (length: {len(CHAT_ID)})")
+else:
+    print("❌ CHAT_ID is missing!")
+
 
 def send_telegram(msg):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
